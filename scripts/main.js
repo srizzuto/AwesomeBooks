@@ -1,3 +1,4 @@
+
 class Book {
   constructor(title, author) {
     this.title = title;
@@ -9,35 +10,51 @@ class Book {
 class Library {
   constructor() {
     self = this;
-    self.books = [];
+    self.books = JSON.parse(window.localStorage.getItem('stored'));
     this.booklist = document.getElementById('booklist');
-    document.getElementById('add').addEventListener('click', this.add)
-    document.getElementById('add').addEventListener('click', this.show)
-    console.log('Library created')
-  }
-
-  show() {
-    let booklist = document.getElementById('booklist');
-    let bookshell = document.createElement('p');
-    let removebutton = document.createElement('button');
-    booklist.appendChild(bookshell);
-    bookshell.innerHTML(`"${book.title}" by ${book.author}`);
-    bookshell.appendChild(removebutton);
+    document.getElementById('add').addEventListener('click', this.add);
+    console.log('Library created');
   }
 
   add() {
     let title = document.getElementById('title').value;
     let author = document.getElementById('author').value;
     let book = new Book(title, author);
+
+
     self.books.push(book);
-    console.log(self.books);
-    console.log(`"${book.title}" by ${book.author} was created`);
+    document.getElementById('form').reset();
+
+    self.show();
   }
 
-  remove() {
-    self.books = this.books.filter((book) => self.books.indexOf(book));
+  show() {
+    let booklist = document.getElementById('booklist');
+    while (booklist.firstChild) {
+      booklist.removeChild(booklist.firstChild)
+    }
+    self.books.map((book) => {
+      let bookshell = document.createElement('p');
+      let removebutton = document.createElement('button');
+
+      removebutton.innerHTML = "Remove";
+
+      booklist.appendChild(bookshell);
+      bookshell.innerHTML = `"${book.title}" by ${book.author}`;
+      bookshell.appendChild(removebutton);
+      removebutton.addEventListener('click', () => { self.books = self.books.filter((bok) => self.books.indexOf(bok)); self.show(); localStorage.setItem('stored', JSON.stringify(self.books)) })
+    })
+
   }
+
 }
 
-
 const library = new Library();
+
+window.addEventListener('load', () => {
+  if (window.localStorage.getItem('stored') === null) {
+    window.localStorage.setItem('stored', JSON.stringify([]))
+  }
+  else library.show();
+})
+
