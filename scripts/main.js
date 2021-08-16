@@ -1,9 +1,13 @@
 function Book(title, author) { this.title = title; this.author = author; }
 class Library {
   constructor() {
+    if (window.localStorage.getItem('stored') === null) {
+      window.localStorage.setItem('stored', JSON.stringify([]));
+    }
     this.books = JSON.parse(window.localStorage.getItem('stored'));
     this.booklist = document.getElementById('booklist');
     document.getElementById('add').addEventListener('click', () => { this.add(); });
+    this.show();
   }
 
   add() {
@@ -12,6 +16,7 @@ class Library {
     const book = new Book(title, author);
 
     this.books.push(book);
+    window.localStorage.setItem('stored', JSON.stringify(this.books));
     document.getElementById('form').reset();
 
     this.show();
@@ -37,10 +42,4 @@ class Library {
 }
 
 const library = new Library();
-
-window.addEventListener('load', () => {
-  if (window.localStorage.getItem('stored') === null) {
-    window.localStorage.setItem('stored', JSON.stringify([]));
-    library.show();
-  } else library.show();
-});
+library.show();
