@@ -12,7 +12,17 @@ class Library {
     self.books = [];
     this.booklist = document.getElementById('booklist');
     document.getElementById('add').addEventListener('click', this.add)
+    document.getElementById('add').addEventListener('click', this.show)
     console.log('Library created')
+  }
+
+  show() {
+    let booklist = document.getElementById('booklist');
+    let bookshell = document.createElement('p');
+    let removebutton = document.createElement('button');
+    booklist.appendChild(bookshell);
+    bookshell.innerHTML(`"${book.title}" by ${book.author}`);
+    bookshell.appendChild(removebutton);
   }
 
   add() {
@@ -28,5 +38,6 @@ class Library {
     self.books = this.books.filter((book) => self.books.indexOf(book));
   }
 }
+
 
 const library = new Library();
