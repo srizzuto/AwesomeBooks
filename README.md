@@ -20,7 +20,7 @@ Knowledge of HTML Semantics CSS And JS-DOM
 
 ## Author
 
-👤 **Atsighi Bright**
+👤 **Sebastian Rizzuto**
 
 - GitHub: [@srizzuto](https://github.com/srizzuto/)
 - Twitter: [@sbstnrzzt](https://twitter.com/sbstnrzzt)
