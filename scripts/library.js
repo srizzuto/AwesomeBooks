@@ -1,4 +1,3 @@
-function Book(title, author) { this.title = title; this.author = author; }
 class Library {
   constructor() {
     if (window.localStorage.getItem('stored') === null) {
@@ -13,7 +12,7 @@ class Library {
   add() {
     const title = document.getElementById('title').value;
     const author = document.getElementById('author').value;
-    const book = new Book(title, author);
+    const book = { title: title, author: author };
 
     this.books.push(book);
     window.localStorage.setItem('stored', JSON.stringify(this.books));
@@ -36,7 +35,7 @@ class Library {
       booklist.appendChild(bookshell);
       bookshell.innerHTML = `"${book.title}" by ${book.author}`;
       bookshell.appendChild(removebutton);
-      removebutton.addEventListener('click', this.remove);
+      removebutton.addEventListener('click', () => { this.remove(); });
     });
   }
   remove() {
