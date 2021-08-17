@@ -36,8 +36,13 @@ class Library {
       booklist.appendChild(bookshell);
       bookshell.innerHTML = `"${book.title}" by ${book.author}`;
       bookshell.appendChild(removebutton);
-      removebutton.addEventListener('click', () => { this.books = this.books.filter((bok) => this.books.indexOf(bok)); this.show(); localStorage.setItem('stored', JSON.stringify(this.books)); });
+      removebutton.addEventListener('click', this.remove);
     });
+  }
+  remove() {
+    this.books = this.books.filter((bok) => this.books.indexOf(bok));
+    this.show();
+    localStorage.setItem('stored', JSON.stringify(this.books));
   }
 }
 
