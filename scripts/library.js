@@ -12,7 +12,7 @@ class Library {
   add() {
     const title = document.getElementById('title').value;
     const author = document.getElementById('author').value;
-    const book = { title: title, author: author };
+    const book = { title, author };
 
     this.books.push(book);
     window.localStorage.setItem('stored', JSON.stringify(this.books));
@@ -38,6 +38,7 @@ class Library {
       removebutton.addEventListener('click', () => { this.remove(); });
     });
   }
+
   remove() {
     this.books = this.books.filter((bok) => this.books.indexOf(bok));
     this.show();
