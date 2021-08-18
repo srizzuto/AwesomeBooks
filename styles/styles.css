@@ -33,7 +33,9 @@ button {
 }
 
 input {
-  font: bold 14px 'Comic Sans MS';
+  font-family: 'Comic Sans MS', "Comic Sans", cursive;
+  font-weight: bold;
+  font-size: 14px;
   color: black;
 }
 
