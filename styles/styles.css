@@ -6,10 +6,22 @@ body {
   justify-content: center;
   text-align: center;
   margin: auto;
+  height: 90%;
 }
 
 main {
-  margin: auto;
+  height: 100%;
+  width: 90%;
+  margin: 5px auto;
+}
+
+section {
+  flex-direction: column;
+  display: none;
+}
+
+#listbook {
+  display: flex;
 }
 
 nav {
@@ -55,10 +67,10 @@ h2 {
 }
 
 footer {
-  position: fixed;
-  left: 0;
+  position: relative;
+  width: 90%;
+  margin: auto;
   bottom: 0;
-  width: 100%;
   color: white;
   text-align: start;
 }
@@ -100,18 +112,10 @@ p {
   justify-content: space-between;
 }
 
-p:nth-of-type(odd) { background: gray; }
+#booklist > p:nth-of-type(odd) { background: gray; }
 
 .border {
   border: solid 3px black;
-}
-
-.short-underline {
-  display: block;
-  width: 135px;
-  height: 1.5px;
-  background-color: black;
-  margin: 15px auto;
 }
 
 .add {
