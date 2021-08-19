@@ -54,6 +54,24 @@ h2 {
   color: black;
 }
 
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: start;
+}
+
+h3 {
+  font-size: 24px;
+  margin-left: 0;
+  padding: 10px 20px;
+  color: black;
+  border: solid 3px black;
+  font-size: 24px;
+}
+
 button {
   position: relative;
   font-family: 'Comic Sans MS', "Comic Sans", cursive;
