@@ -63,16 +63,16 @@ document.getElementById('list').addEventListener('click', () => {
   list.style.display = 'flex';
   addbook.style.display = 'none';
   contact.style.display = 'none';
-  });
+});
 
-document.getElementById('addlink').addEventListener('click', () => { 
+document.getElementById('addlink').addEventListener('click', () => {
   list.style.display = 'none';
   addbook.style.display = 'flex';
   contact.style.display = 'none';
-  });
+});
 
-document.getElementById('contactme').addEventListener('click', () => { 
+document.getElementById('contactme').addEventListener('click', () => {
   list.style.display = 'none';
   addbook.style.display = 'none';
   contact.style.display = 'flex';
-  });
+});
