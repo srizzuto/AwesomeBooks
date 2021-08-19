@@ -46,10 +46,11 @@ class Library {
   }
 
   dateTime() {
+    /* eslint-disable */
     const dt = luxon.DateTime.now().toLocaleString(luxon.DateTime.DATETIME_FULL);
     document.getElementById('datetime').innerHTML = dt;
+    /* eslint-enable */
   }
-
 
 }
 
@@ -61,19 +62,19 @@ const addbook = document.getElementById('addbook');
 const contact = document.getElementById('contactinfo');
 
 document.getElementById('list').addEventListener('click', () => {
-  list.style.display = 'flex';
-  addbook.style.display = 'none';
-  contact.style.display = 'none';
- })
+list.style.display = 'flex';
+addbook.style.display = 'none';
+contact.style.display = 'none';
+})
 
  document.getElementById('addlink').addEventListener('click', () => { 
-  list.style.display = 'none';
-  addbook.style.display = 'flex';
-  contact.style.display = 'none';
- })
+list.style.display = 'none';
+addbook.style.display = 'flex';
+contact.style.display = 'none';
+})
 
  document.getElementById('contactme').addEventListener('click', () => { 
-  list.style.display = 'none';
-  addbook.style.display = 'none';
-  contact.style.display = 'flex';
- })
+list.style.display = 'none';
+addbook.style.display = 'none';
+contact.style.display = 'flex';
+})
